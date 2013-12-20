@@ -18,15 +18,15 @@ class TestMonth < MiniTest::Unit::TestCase
     assert_equal 6, june.first_day
   end
 
-  # def test_02a_Month_class_number_of_days_long
-  #   january = Month.new(1, 2012)
-  #   assert_equal 31, january.number_of_days
-  # end
+  def test_02a_Month_class_number_of_days_long
+    january = Month.new(1, 2012)
+    assert_equal 31, january.number_of_days
+  end
 
-  # def test_02b_Month_class_number_of_days_short
-  #   april = Month.new(4, 2012)
-  #   assert_equal 30, april.number_of_days
-  # end
+  def test_02b_Month_class_number_of_days_short
+    april = Month.new(4, 2012)
+    assert_equal 30, april.number_of_days
+  end
 
   # def test_03a_Month_class_number_of_days_febuary
   #   not_leap = Month.new(2, 2013)
