@@ -28,22 +28,22 @@ class TestMonth < MiniTest::Unit::TestCase
     assert_equal 30, april.number_of_days
   end
 
-  # def test_03a_Month_class_number_of_days_febuary
+  # def test_03a_Month_class_number_of_days_february
   #   not_leap = Month.new(2, 2013)
   #   assert_equal 28, not_leap.number_of_days
   # end
 
-  # def test_03b_Month_class_number_of_days_febuary
+  # def test_03b_Month_class_number_of_days_february
   #   leap_divideby_4 = Month.new(2, 2012)
   #   assert_equal 29, leap_divideby_4.number_of_days
   # end
 
-  # def test_03c_Month_class_number_of_days_febuary
+  # def test_03c_Month_class_number_of_days_february
   #   not_leap_divideby_100 = Month.new(2, 1900)
   #   assert_equal 28, leap_divideby_100.number_of_days
   # end
 
-  # def test_03d_Month_class_number_of_days_febuary
+  # def test_03d_Month_class_number_of_days_february
   #   leap_divideby_400 = Month.new(2, 2000)
   #   assert_equal 29, leap_divideby_400.number_of_days
   # end
