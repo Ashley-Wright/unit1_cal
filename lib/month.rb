@@ -17,6 +17,9 @@ class Month
       days = 31
     elsif months_30days.include?(@month)
       days = 30
+    elsif @month == 2
+      year = Year.new(@year)
+      days = year.leap_year? ? 29 : 28
     end
   end
 
