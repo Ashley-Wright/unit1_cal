@@ -12,30 +12,16 @@ class TestCal < MiniTest::Unit::TestCase
     end
   end
 
-  def test_02_Zellers_class_days
+  def test_02a_Zellers_class_days
     assert_equal 1, Zellers_congruence.calculate(1, 2012)
+  end
+
+  def test_02b_Zellers_class_days
     assert_equal 0, Zellers_congruence.calculate(9, 2012)
+  end
+
+  def test_02c_Zellers_class_days
     assert_equal 6, Zellers_congruence.calculate(6, 2012)
-  end
-
-  def test_03_Calendar_class_can_take_one_argument
-    input = Calendar.new(2012)
-    assert_instance_of(Calendar, input)
-  end
-
-  def test_04_Calendar_class_can_take_two_argument
-    input = Calendar.new(1, 2012)
-    assert_instance_of(Calendar, input)
-  end
-
-  def test_05_Calendar_class_year_method
-    calendar = Calendar.new(1, 2012)
-    assert_equal 2012, calendar.year
-  end
-
-  def test_06_Calendar_class_month_method
-    calendar = Calendar.new(1, 2012)
-    assert_equal 11, calender.month
   end
 
   def test_07_Month_class_first_day
@@ -43,9 +29,9 @@ class TestCal < MiniTest::Unit::TestCase
     september = Month.new(9, 2012)
     june = Month.new(6, 2012)
 
-    assert_equal 1, january
-    assert_equal 0, september
-    assert_equal 6, june
+    assert_equal 1, january.first_day
+    assert_equal 0, september.first_day
+    assert_equal 6, june.first_day
   end
 
   def test_08_Month_class_number_of_days
@@ -68,6 +54,40 @@ class TestCal < MiniTest::Unit::TestCase
     assert_equal 28, leap_divideby_100.number_of_days
     assert_equal 29, leap_divideby_400.number_of_days
   end
+
+  def test_X_Month_class_calendar_rows_starts_on_sunday
+    january = Month.new(1, 2012)
+    array = (1..31).to_a
+    11.times do
+      array.push(' ')
+    end
+    assert_equal array, january.calendar_rows
+  end
+
+  def test_X_Month_class_calendar_rows_starts_not_on_sunday
+    march = Month.new(3, 2012)
+    array = []
+    4.times do
+      array.push(' ')
+    end
+    array.push((1..31).to_a)
+    7.times do
+      array.push(' ')
+    end
+    assert_equal array, march.calendar_rows
+  end
+
+  def test_X_Month_class_calendar_row_first
+    january = Month.new(1, 2012)
+    assert_equal [1, 2, 3, 4, 5, 6, 7], january.calendar_row[1]
+  end
+
+  def test_X_Month_class_calendar_row_not_first
+    january = Month.new(1, 2012)
+    assert_equal [15, 16, 17, 18, 19, 20, 21], january.calendar_row[3]
+  end
+
+  # Integration Testing
 
   def test_10_print_month_starts_on_sunday
     shell_output = `ruby cal.rb 1 2012`
