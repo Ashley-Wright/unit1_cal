@@ -34,7 +34,10 @@ class Month
     # Calendar days
     days = self.number_of_days
     (1..days).to_a.each do |day|
-      calendar_days.push(day)
+      if day < 10
+        day = " " + day.to_s
+      end
+      calendar_days.push(day.to_s)
     end
 
     # In order to make 6 full rows
@@ -44,4 +47,5 @@ class Month
 
     return calendar_days
   end
+
 end
