@@ -48,4 +48,20 @@ class Month
     return calendar_days
   end
 
+  def calendar_row index
+    if index == 1
+      row = self.calendar_rows[0..6]
+    elsif index == 2
+      row = self.calendar_rows[7..13]
+    elsif index == 3
+      row = self.calendar_rows[14..20]
+    elsif index == 4
+      row = self.calendar_rows[21..27]
+    elsif index == 5
+      row = self.calendar_rows[28..34]
+    elsif index == 6
+      row = self.calendar_rows[35..41]
+    end
+  end
+
 end

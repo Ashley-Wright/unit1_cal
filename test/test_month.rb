@@ -60,13 +60,13 @@ class TestMonth < MiniTest::Unit::TestCase
     assert_equal array, march.calendar_rows
   end
 
-  # def test_06_Month_class_calendar_row_first
-  #   january = Month.new(1, 2012)
-  #   assert_equal [1, 2, 3, 4, 5, 6, 7], january.calendar_row(1)
-  # end
+  def test_06_Month_class_calendar_row_first
+    january = Month.new(1, 2012)
+    assert_equal [" 1", " 2", " 3", " 4", " 5", " 6", " 7"], january.calendar_row(1)
+  end
 
-  # def test_07_Month_class_calendar_row_not_first
-  #   january = Month.new(1, 2012)
-  #   assert_equal [15, 16, 17, 18, 19, 20, 21], january.calendar_row(3)
-  # end
+  def test_07_Month_class_calendar_row_not_first
+    january = Month.new(1, 2012)
+    assert_equal ["15", "16", "17", "18", "19", "20", "21"], january.calendar_row(3)
+  end
 end
