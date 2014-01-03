@@ -23,4 +23,25 @@ class Month
     end
   end
 
+  def calendar_rows
+    first_day = self.first_day
+    calendar_days = []
+
+    # Correct spacing before first day
+    spaces = first_day == 0 ? 6 : first_day - 1
+    spaces.times {calendar_days.push(' ')}
+
+    # Calendar days
+    days = self.number_of_days
+    (1..days).to_a.each do |day|
+      calendar_days.push(day)
+    end
+
+    # In order to make 6 full rows
+    until calendar_days.length == 42 do
+      calendar_days.push(' ')
+    end
+
+    return calendar_days
+  end
 end

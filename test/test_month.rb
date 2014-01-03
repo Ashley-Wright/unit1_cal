@@ -48,27 +48,27 @@ class TestMonth < MiniTest::Unit::TestCase
     assert_equal 29, leap_divideby_400.number_of_days
   end
 
-  # def test_04_Month_class_calendar_rows_starts_on_sunday
-  #   january = Month.new(1, 2012)
-  #   array = (1..31).to_a
-  #   11.times do
-  #     array.push(' ')
-  #   end
-  #   assert_equal array, january.calendar_rows
-  # end
+  def test_04_Month_class_calendar_rows_starts_on_sunday
+    january = Month.new(1, 2012)
+    array = (1..31).to_a
+    11.times do
+      array.push(' ')
+    end
+    assert_equal array, january.calendar_rows
+  end
 
-  # def test_05_Month_class_calendar_rows_starts_not_on_sunday
-  #   march = Month.new(3, 2012)
-  #   array = []
-  #   4.times do
-  #     array.push(' ')
-  #   end
-  #   array.push((1..31).to_a)
-  #   7.times do
-  #     array.push(' ')
-  #   end
-  #   assert_equal array, march.calendar_rows
-  # end
+  def test_05_Month_class_calendar_rows_starts_not_on_sunday
+    march = Month.new(3, 2012)
+    array = []
+    4.times do
+      array.push(' ')
+    end
+    array.push(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31)
+    7.times do
+      array.push(' ')
+    end
+    assert_equal array, march.calendar_rows
+  end
 
   # def test_06_Month_class_calendar_row_first
   #   january = Month.new(1, 2012)

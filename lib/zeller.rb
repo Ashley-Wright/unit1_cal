@@ -10,6 +10,6 @@ class Zellers_congruence
     century = (year/100).floor
 
     day = day_of_the_month + ((13*(month + 1))/5).floor + year_of_the_century + (year_of_the_century/4).floor + (century/4).floor - 2*century
-    day = day % 7
+    day = day % 7 # 0 = saturday, 1 = sunday, 2 = monday, etc
   end
 end
