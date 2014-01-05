@@ -15,4 +15,15 @@ class Year
       false
     end
   end
+
+  def calendar_row index
+    row = []
+    for i in (1..3)
+      month = Month.new(i, @year)
+      row.push(month.calendar_row(index))
+      row.push(" ")
+    end
+    return row.flatten
+  end
+
 end

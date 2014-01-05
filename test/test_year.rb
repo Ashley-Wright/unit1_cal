@@ -19,9 +19,9 @@ class TestYear < MiniTest::Unit::TestCase
   end
   # leap_year? goes through more testing in Month_number_of_days_february
 
-  # def test_04_Year_class_calendar_row
-  #   year = Year.new(2012)
-  #   row = "15 16 17 18 19 20 21  12 13 14 15 16 17 18  11 12 13 14 15 16 17"
-  #   assert_equal row, year.calendar_row[3]
-  # end
+  def test_04_Year_class_calendar_row
+    year = Year.new(2012)
+    row = ["15", "16", "17", "18", "19", "20", "21", " ", "12", "13", "14", "15", "16", "17", "18", " ", "11", "12", "13", "14", "15", "16", "17", " "]
+    assert_equal row, year.calendar_row(3)
+  end
 end
