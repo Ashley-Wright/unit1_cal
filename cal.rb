@@ -7,6 +7,10 @@ week_days = "Su Mo Tu We Th Fr Sa"
 
 month = ARGV[0].to_i
 year = ARGV[1].to_i
+if year < 1800 || year > 3000
+  puts "year out of range"
+  exit 64
+end
 
 cal = Month.new(month, year)
 month_name = months[(month-1)]

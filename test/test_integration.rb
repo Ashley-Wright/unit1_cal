@@ -51,11 +51,11 @@ class TestIntegration < MiniTest::Unit::TestCase
     assert_equal expected_output, shell_output
   end
 
-  # def test_16_print_month_outside_of_scope
-  #   shell_output = `ruby cal.rb 5 3005`
+  def test_16_print_month_outside_of_scope
+    shell_output = `ruby cal.rb 5 3005`
 
-  #   assert_equal 64, $?.exitstatus
-  # end
+    assert_equal 64, $?.exitstatus
+  end
 
   # def test_17_print_year
   #   shell_output = `ruby cal.rb 2012`
