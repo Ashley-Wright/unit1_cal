@@ -9,12 +9,6 @@ class TestZeller < MiniTest::Unit::TestCase
     end
   end
 
-  # def test_01b_Zellers_class_takes_two_arguments
-  #   assert_nothing_raised(ArgumentError) do
-  #     test2 = Zellers_congruence.calculate(5, 2012)
-  #   end
-  # end
-
   def test_02a_Zellers_class_days
     assert_equal 1, Zellers_congruence.calculate(1, 2012)
   end
