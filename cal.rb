@@ -9,9 +9,15 @@ if ARGV.length == 2
   # Just print one month
   month = ARGV[0].to_i
   year = ARGV[1].to_i
+
   # Only accept years between 1800 and 3000
   if year < 1800 || year > 3000
     puts "year out of range"
+    exit 64
+  end
+  # test valid input for month
+  unless month >= 1 && month <=12
+    puts "invalid input for month"
     exit 64
   end
 
