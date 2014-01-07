@@ -5,6 +5,12 @@ require_relative "lib/zeller"
 months = [:January, :February, :March, :April, :May, :June, :July, :August, :September, :October, :November, :December]
 week_days = "Su Mo Tu We Th Fr Sa"
 
+# Arguments must be given
+if ARGV.length == 0
+  puts "input required"
+  exit 64
+end
+
 if ARGV.length == 2
   # Just print one month
   month = ARGV[0].to_i
