@@ -5,9 +5,9 @@ require_relative "lib/zeller"
 months = [:January, :February, :March, :April, :May, :June, :July, :August, :September, :October, :November, :December]
 week_days = "Su Mo Tu We Th Fr Sa"
 
-# Arguments must be given
-if ARGV.length == 0
-  puts "input required"
+# There must be 1 or 2 arguments given
+if ARGV.length == 0 || ARGV.length > 2
+  puts "1 or 2 arguments required"
   exit 64
 end
 

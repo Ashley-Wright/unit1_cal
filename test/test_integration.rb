@@ -69,6 +69,12 @@ class TestIntegration < MiniTest::Unit::TestCase
     assert_equal 64, $?.exitstatus
   end
 
+  def test_16d_too_many_arguments
+    shell_output = `ruby cal.rb 1 2 2012`
+
+    assert_equal 64, $?.exitstatus
+  end
+
   def test_17_print_year
     shell_output = ignore_trailing_whitespace `ruby cal.rb 2012`
     expected_output = ignore_trailing_whitespace `cal 2012`
