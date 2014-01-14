@@ -17,31 +17,19 @@ class Year
   end
 
   def calendar_row index
+    quarters = {1 => (1..3),
+                2 => (4..6),
+                3 => (7..9),
+                4 => (10..12)}
+
+    quarter = (index/6.0).ceil
+    row_within_quarter = index % 6
+
     row = []
-    if index >= 1 && index <= 6
-      for i in (1..3)
-        month = Month.new(i, @year)
-        row.push(month.calendar_row(index))
-        row.push("") # Add an extra empty string after each month for spacing
-      end
-    elsif index >= 7 && index <= 12
-      for i in (4..6)
-        month = Month.new(i, @year)
-        row.push(month.calendar_row(index - 6))
-        row.push("") # Add an extra empty string after each month for spacing
-      end
-    elsif index >= 13 && index <= 18
-      for i in (7..9)
-        month = Month.new(i, @year)
-        row.push(month.calendar_row(index - 12))
-        row.push("") # Add an extra empty string after each month for spacing
-      end
-    elsif index >= 19 && index <= 24
-      for i in (10..12)
-        month = Month.new(i, @year)
-        row.push(month.calendar_row(index - 18))
-        row.push("") # Add an extra empty string after each month for spacing
-      end
+    quarters[quarter].to_a.each do |month|
+      current_month = Month.new(month, @year)
+      row.push(current_month.calendar_row(row_within_quarter))
+      row.push("") # Add an extra empty string after each month for spacing
     end
     return row.flatten #Gets rid of arrays inside of arrays
   end
