@@ -69,4 +69,10 @@ class TestMonth < MiniTest::Unit::TestCase
     january = Month.new(1, 2012)
     assert_equal ["15", "16", "17", "18", "19", "20", "21"], january.calendar_row(3)
   end
+
+  def test_08_Month_class_to_s
+    january = Month.new(1, 2012)
+    expected = ("    January 2012    \nSu Mo Tu We Th Fr Sa\n 1  2  3  4  5  6  7\n 8  9 10 11 12 13 14\n15 16 17 18 19 20 21\n22 23 24 25 26 27 28\n29 30 31            \n                    \n")
+    assert_equal expected, january.to_s
+  end
 end

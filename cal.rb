@@ -29,13 +29,7 @@ if month and year
   end
 
   cal = Month.new(month, year)
-  month_name = months[(month-1)]
-  puts "#{month_name} #{year}".center(20)
-  puts week_days
-
-  (1..6).each do |num|
-    puts cal.calendar_row(num).join(' ')
-  end
+  puts cal.to_s
 
 elsif year
   # Print a whole year

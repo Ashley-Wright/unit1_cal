@@ -1,5 +1,8 @@
 
 class Month
+  MONTHS = [:January, :February, :March, :April, :May, :June, :July, :August, :September, :October, :November, :December]
+  WEEK_DAYS = "Su Mo Tu We Th Fr Sa\n"
+
   def initialize month, year
     @month = month
     @year = year
@@ -51,6 +54,17 @@ class Month
   def calendar_row index
     start = (index - 1) * 7
     self.calendar_rows[start..(start + 6)]
+  end
+
+  def to_s
+    month_name = MONTHS[(@month-1)]
+    string = "#{month_name} #{@year}".center(20)
+    string.concat("\n" + WEEK_DAYS)
+
+    (1..6).each do |num|
+      string << calendar_row(num).join(' ') + "\n"
+    end
+    string
   end
 
 end
